@@ -1,14 +1,16 @@
 package com.example.BankingProject.Entity;
 
 import jakarta.persistence.*;
-        import lombok.Getter;
-import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
-@Table(name = "accounts")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
-@Getter
-@Setter
+@Table(name = "accounts")
 public class Account {
 
     @Id

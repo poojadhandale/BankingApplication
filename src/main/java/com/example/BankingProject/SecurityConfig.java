@@ -29,8 +29,8 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(
                         authorizeRequest -> authorizeRequest
-                                .requestMatchers("/accounts").hasRole("ADMIN")
-                                .requestMatchers("/welcome").hasRole("USER")
+                                .requestMatchers("/accounts").hasAuthority("ADMIN")
+                                .requestMatchers("/welcome").hasAuthority("USER")
                                 .anyRequest().authenticated())
                 .httpBasic(withDefaults())
                 .sessionManagement(session ->
