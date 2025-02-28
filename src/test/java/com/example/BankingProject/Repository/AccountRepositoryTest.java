@@ -12,21 +12,8 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 @DataJpaTest
 class AccountRepositoryTest {
 
-    @Autowired
-    private AccountRepository accountRepository;
-
     @BeforeEach
     void setUp() {
     }
 
-    @Test
-    void saveAccount() {
-        Account account = new Account();
-        account.setAccountHolderName("Pooja");
-        account.setBalance(3000);
-        Account newAccount = accountRepository.save(account);
-
-        Assertions.assertNotNull(newAccount);
-        Assertions.assertNotNull(newAccount.getId());
-    }
 }

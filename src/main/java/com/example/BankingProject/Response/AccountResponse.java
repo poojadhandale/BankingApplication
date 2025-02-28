@@ -1,22 +1,20 @@
-package com.example.BankingProject.Entity;
+package com.example.BankingProject.Response;
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.Column;
 
-@Entity
-@Table(name = "accounts")
-public class Account {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class AccountResponse {
     private Long id;
-
-    @Column(name = "account_holder_name")
     private String accountHolderName;
-
     private double balance;
+    private AddressResponse addressResponse;
+
+    public AddressResponse getAddressResponse() {
+        return addressResponse;
+    }
+
+    public void setAddressResponse(AddressResponse addressResponse) {
+        this.addressResponse = addressResponse;
+    }
 
     public Long getId() {
         return id;
